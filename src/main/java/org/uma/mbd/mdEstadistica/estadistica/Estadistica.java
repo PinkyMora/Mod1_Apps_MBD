@@ -28,6 +28,4 @@ public class Estadistica {
     public double desviacionTipica(){
         return sqrt(varianza());
     }
-
-
 }
