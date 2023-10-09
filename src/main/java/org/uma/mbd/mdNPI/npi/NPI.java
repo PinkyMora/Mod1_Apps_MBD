@@ -29,7 +29,7 @@ public class NPI {
         t=0;
     }
     public void divide(){
-        x= y / x;
+        x= x / y;
         y=z;
         z=t;
         t=0;

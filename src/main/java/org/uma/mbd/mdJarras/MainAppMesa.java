@@ -25,8 +25,5 @@ public class MainAppMesa {
         mesa.vuelcaBSobreA();
         System.out.println("Paso Final:     " + mesa);
 
-
     }
-
-
 }

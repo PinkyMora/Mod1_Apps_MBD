@@ -15,12 +15,8 @@ public class Mesa {
     public void llenaB(){
         jarraB.llena();
     }
-    public void vaciaA(){
-        jarraA.vacia();
-    }
-    public void vaciaB(){
-        jarraB.vacia();
-    }
+    public void vaciaA() { jarraA.vacia(); }
+    public void vaciaB() { jarraB.vacia(); }
 
     public void vuelcaASobreB(){
         jarraB.llenaDesde(jarraA);
@@ -48,6 +44,6 @@ public class Mesa {
 
     @Override
     public String toString(){
-        return "JarraA("+jarraA+"), JarraB("+jarraB+")";
+        return "JarraA: "+jarraA+" | JarraB: "+jarraB+" ";
     }
 }

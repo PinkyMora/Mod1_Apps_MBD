@@ -5,7 +5,10 @@ public class Jarra {
     private int capacidad;
     private int contenido;
 
-    public Jarra(int capInicial){capacidad = capInicial;}
+    public Jarra(int capInicial){
+        capacidad = capInicial;
+        this.vacia();
+    }
 
     public int getCapacidad() {return capacidad;}
 
