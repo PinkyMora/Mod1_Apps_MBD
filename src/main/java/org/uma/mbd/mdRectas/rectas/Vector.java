@@ -9,8 +9,9 @@ public class Vector {
     public Vector(Punto pto){
         extremo = new Punto(pto.getX(), pto.getY());
     }
-    public Vector(Punto origen, Punto extremo){
-
+    public Vector(Punto origen, Punto extremoNew){
+        extremoNew.trasladar(-1*origen.getX(), -1*origen.getY());
+        new Vector(extremoNew);
     }
 
     @Override

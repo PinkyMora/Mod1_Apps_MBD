@@ -3,10 +3,11 @@ package org.uma.mbd.mdRectas.rectas;
 public class Punto {
 
     private double x, y;
-    public Punto() { x = y = 0; }
     public Punto(double a, double b) {
         x = a; y = b;
     }
+    public Punto() { this(0,0); }
+
     public double getX() { return x; }
     public double getY() { return y; }
     public void trasladar(double a, double b) {
