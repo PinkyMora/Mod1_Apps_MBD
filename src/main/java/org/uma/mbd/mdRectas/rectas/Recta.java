@@ -29,14 +29,14 @@ public class Recta {
         double px = pto.getX();
         double py = pto.getY();
 
-        double a = 1/vx;
-        double b = -1/vy;
-        double c = (py/vy)-(px/vx);
+        final double a = 1/vx;
+        final double b = -1/vy;
+        final double c = (py/vy)-(px/vx);
 
         return new Implicita(a,b,c);
     }
 
-    private double determinante(double a11, double a12, double a21, double a22){
+    private static double determinante(double a11, double a12, double a21, double a22){
         return a11*a22 - a12*a21;
     }
 
