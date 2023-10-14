@@ -49,8 +49,9 @@ public class Recta {
         if (denominadorX == 0 || denominadorY == 0 ) {
             throw new IllegalArgumentException("Rectas Paralelas, no existe interseccion");
         }
-        double numeradorX = determinante(implicita1.a, -implicita1.c, implicita2.a, -implicita2.c);
-        double numeradorY = determinante(-implicita1.c, implicita1.b, -implicita2.c, implicita2.b);
+        double numeradorX = determinante(-implicita1.c, implicita1.b, -implicita2.c, implicita2.b);
+        double numeradorY = determinante(implicita1.a, -implicita1.c, implicita2.a, -implicita2.c);
+
         return new Punto((numeradorX/denominadorX),(numeradorY/denominadorY));
     }
 

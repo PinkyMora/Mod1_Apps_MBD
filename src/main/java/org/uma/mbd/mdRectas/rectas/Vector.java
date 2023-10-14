@@ -15,12 +15,12 @@ public class Vector {
     public Vector(Punto origen, Punto extremoNew){
         // I don't know at which point this is efficient and usable
         Punto puntotrasladado = new Punto(extremoNew.getX(), extremoNew.getY());
-        puntotrasladado.trasladar(origen.getX(), origen.getY());
+        puntotrasladado.trasladar(-origen.getX(), -origen.getY());
         extremo = puntotrasladado;
     }
     public Punto extremoDesde(Punto org){
         Punto extremoNow = new Punto(getComponenteX(), getComponenteY());
-        extremoNow.trasladar(org.getX(), org.getY());
+        extremoNow.trasladar(-org.getX(), -org.getY());
         return extremoNow;
     }
     public double getComponenteX(){
