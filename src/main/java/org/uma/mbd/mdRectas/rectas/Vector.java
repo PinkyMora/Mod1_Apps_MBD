@@ -7,9 +7,11 @@ public class Vector {
     public Vector(double x, double y){
         extremo = new Punto(x,y);
     }
+
     public Vector(Punto pto){
         this(pto.getX(), pto.getY());
     }
+
     public Vector(Punto origen, Punto extremoNew){
         // I don't know at which point this is efficient and usable
         Punto puntotrasladado = new Punto(extremoNew.getX(), extremoNew.getY());
@@ -27,9 +29,11 @@ public class Vector {
     public double getComponenteY(){
         return extremo.getY();
     }
+
     public double modulo(){
         return (Math.sqrt(Math.pow(extremo.getX(), 2)+Math.pow(extremo.getY(), 2)));
     }
+
     public Vector ortogonal(){
         return new Vector(-getComponenteY(),getComponenteX());
     }

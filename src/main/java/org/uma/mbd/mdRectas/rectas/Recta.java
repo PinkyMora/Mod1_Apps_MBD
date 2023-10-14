@@ -39,6 +39,7 @@ public class Recta {
     private double determinante(double a11, double a12, double a21, double a22){
         return a11*a22 - a12*a21;
     }
+
     public Punto interseccionCon(Recta recta){
         Implicita implicita1 = recta.implicita();
         Implicita implicita2 = implicita();
@@ -47,11 +48,10 @@ public class Recta {
         double denominadorY = determinante(implicita1.a, implicita1.b, implicita2.a,implicita2.b);
         if (denominadorX == 0 || denominadorY == 0 ) {
             throw new IllegalArgumentException("Rectas Paralelas, no existe interseccion");
-        }else {
-            double numeradorX = determinante(implicita1.a, -implicita1.c, implicita2.a, -implicita2.c);
-            double numeradorY = determinante(-implicita1.c, implicita1.b, -implicita2.c, implicita2.b);
-            return new Punto((numeradorX/denominadorX),(numeradorY/denominadorY));
         }
+        double numeradorX = determinante(implicita1.a, -implicita1.c, implicita2.a, -implicita2.c);
+        double numeradorY = determinante(-implicita1.c, implicita1.b, -implicita2.c, implicita2.b);
+        return new Punto((numeradorX/denominadorX),(numeradorY/denominadorY));
     }
 
     public Recta paralelaPor (Punto p){
