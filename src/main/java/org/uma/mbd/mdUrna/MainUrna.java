@@ -6,6 +6,10 @@ public class MainUrna {
         int nBlancas = Integer.parseInt(args[0]);
         int nNegras  = Integer.parseInt(args[1]);
 
+        if (nBlancas <= 0 && nNegras <= 0)
+        {
+            throw new IllegalArgumentException("Numero de bolas introducido incorrecto.");
+        }
         Urna urna = new Urna(nBlancas,nNegras);
         System.out.println("Creamos urna con los datos introducidos por parametro: "+urna);
 

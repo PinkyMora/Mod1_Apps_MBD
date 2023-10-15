@@ -23,5 +23,9 @@ public class Tesoro {
         calculaPosiciones();
     }
 
+    public Punto getEstacaAmarilla() {return estacaAmarilla;}
 
+    public Punto getEstacaAzul() {return estacaAzul;}
+
+    public Punto getTesoro() {return tesoro;}
 }
