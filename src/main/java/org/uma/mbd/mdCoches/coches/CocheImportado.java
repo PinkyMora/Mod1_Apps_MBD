@@ -8,6 +8,7 @@ public class CocheImportado extends Coche{
         this.homologacion = homologacion;
     }
 
+    @Override
     public double precioTotal(){
         return homologacion+ super.precioTotal();
     }
