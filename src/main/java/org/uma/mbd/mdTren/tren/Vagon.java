@@ -13,8 +13,8 @@ public class Vagon {
     public int carga(int ton){
         int sobra = 0;
         if (ton >= (capacidad-carga)) {
-            carga = capacidad;
             sobra = ton-(capacidad-carga);
+            carga = capacidad;
         }else{
             carga += ton;
         }

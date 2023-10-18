@@ -15,14 +15,32 @@ public class Tren {
     }
 
     public void carga(int ton){
+        int idx = 0;
+        while( ton > 0){
+            ton = vagones.get(idx).carga(ton);
+            idx++;
+            if (idx == vagones.size() && ton != 0){
+                vagones.add(new Vagon(vagones.get(idx-1).getCapacidad()));
+            }
+        }
 
     }
 
-    public void descarga(int ton){
-
+    public void gasta(int ton){
+        for (Vagon vagon:vagones) {
+            ton = vagon.descarga(ton);
+        }
+        if (ton != 0)
+            throw new IllegalArgumentException("El tren gasta más de lo que carga");
     }
 
     public void optimiza(){
+        for (int i = 0; i< vagones.size();i++){
+            if (vagones.get(i).getCarga() == 0) {
+                vagones.remove(i);
+                i--;
+            }
+        }
 
     }
 
