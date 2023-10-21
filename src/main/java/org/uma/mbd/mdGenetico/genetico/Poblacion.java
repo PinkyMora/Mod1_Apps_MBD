@@ -2,7 +2,7 @@ package org.uma.mbd.mdGenetico.genetico;
 
 
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.Optional;
 
 public class Poblacion {
     private Individuo[] individuos;
@@ -46,10 +46,11 @@ public class Poblacion {
      * @return Individuo con mejor fitness.
      */
     public Individuo mejorIndividuo() {
-        // COMPLETAR
+        return Arrays.stream(individuos).max((ind1, ind2)-> Double.compare(ind1.getFitness(), ind2.getFitness())).orElse(null);
+    }
 
-                //Individuo max = Arrays.stream(individuos).max(Comparator.<Individuo>comparing(individuo.getFitness()));
-        return null;
+    private Individuo peorIndividuo(){
+        return Arrays.stream(individuos).min((ind1, ind2)-> Double.compare(ind1.getFitness(), ind2.getFitness())).orElse(null);
     }
 
     /**
