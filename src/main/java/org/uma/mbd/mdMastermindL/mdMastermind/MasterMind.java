@@ -24,6 +24,7 @@ public class MasterMind {
     private boolean validaCombinacion(String cifras){
         boolean bLongitud = (cifras.length() > getLongitud());
         boolean bNumerico = cifras.matches("[0-9]*");
+        return bNumerico && bLongitud;
     }
 
     public MasterMind(){

@@ -53,8 +53,13 @@ public class Cromosoma {
      * Cobstructor de copia
      */
     public Cromosoma copia() {
-        // COMPLETAR
-        return null;
+        Cromosoma copia = new Cromosoma(datos.length, false); // Create a new Cromosoma with the same length
+
+        // Copy the values from the current Cromosoma to the new one
+        for (int i = 0; i < datos.length; i++) {
+            copia.setGen(i, datos[i]);
+        }
+        return copia;
     }
     /**
      * Consulta el gen en la posición indicada.
@@ -83,11 +88,9 @@ public class Cromosoma {
      */
     public void setGen(int i, int val) {
         //COMPLETAR
-        if (val != 0 && val != 1){
-            throw new IllegalArgumentException("Gen no válido, debe ser 0 ó 1");
+        if ((val != 0 && val != 1) || (i < 0 || i > datos.length)){
+            throw new IllegalArgumentException("Argumentos no válidos para realizar la operacion");
         }
-        // if (i>datos.length)
-
         datos[i] = val;
     }
 
@@ -100,7 +103,6 @@ public class Cromosoma {
      *             si la probabilidad indicada no es un valor válido.
      */
     public void mutar(double probMutacion) {
-        // COMPLETAR
         for (int i=0;i< datos.length; i++){
             if (gna.nextDouble(100)/100 < probMutacion ){
                 if(datos[i] == 0) {

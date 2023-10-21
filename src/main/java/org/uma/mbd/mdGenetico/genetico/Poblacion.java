@@ -2,7 +2,6 @@ package org.uma.mbd.mdGenetico.genetico;
 
 
 import java.util.Arrays;
-import java.util.Optional;
 
 public class Poblacion {
     private Individuo[] individuos;
@@ -24,10 +23,10 @@ public class Poblacion {
 
         if (tamaño < 1)
             throw new IllegalArgumentException("Numero de individuos invalido para la creacion de una poblacion");
-        individuos = new Individuo[tamaño];
 
+        individuos = new Individuo[tamaño];
         for (int i = 0; i< tamaño; i++){
-            individuos[i] = new Individuo(new Cromosoma(longitud,true),problema);
+            individuos[i] = new Individuo(longitud,problema);
         }
     }
 
@@ -46,12 +45,15 @@ public class Poblacion {
      * @return Individuo con mejor fitness.
      */
     public Individuo mejorIndividuo() {
-        return Arrays.stream(individuos).max((ind1, ind2)-> Double.compare(ind1.getFitness(), ind2.getFitness())).orElse(null);
+        return Arrays.stream(individuos)
+                .reduce((ind1, ind2)-> ind1.getFitness() >= ind2.getFitness() ? ind1 : ind2)
+                .orElse(null );
+        //Arrays.stream(individuos).max((ind1, ind2)-> Double.compare(ind1.getFitness(), ind2.getFitness())).orElse(null)
     }
 
-    private Individuo peorIndividuo(){
-        return Arrays.stream(individuos).min((ind1, ind2)-> Double.compare(ind1.getFitness(), ind2.getFitness())).orElse(null);
-    }
+/*    private Individuo peorIndividuo(){
+        return Arrays.stream(individuos).min((ind1, ind2)-> Double.compare(ind1.getFitness(), ind2.getFitness())).;
+    }*/
 
     /**
      * Devuelve el i-ésimo individuo de la población.
@@ -64,6 +66,8 @@ public class Poblacion {
      */
     public Individuo getIndividuo(int i) {
         //COMPLETAR
+        if (i < 0 || i >= getNumIndividuos())
+            throw new ArrayIndexOutOfBoundsException("Posicion fuera del array de Inidividuos");
         return individuos[i];
     }
 
@@ -77,8 +81,18 @@ public class Poblacion {
      *            este es mejor.
      */
     public void reemplaza(Individuo ind) {
-        // COMPLETAR
-        //if(ind.getFitness() > peorIndividuo.getFitness())
-    }
 
+        int posWorse = 0;
+        double worseFitness = individuos[posWorse].getFitness();
+
+        for (int i = 0; i < getNumIndividuos(); i++) {
+
+            if (individuos[i].getFitness() < worseFitness) {
+
+                worseFitness = individuos[i].getFitness();
+                posWorse = i;
+            }
+        }
+        individuos[posWorse] = ind;
+    }
 }
