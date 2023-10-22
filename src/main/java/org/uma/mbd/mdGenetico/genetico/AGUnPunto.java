@@ -29,13 +29,9 @@ public class AGUnPunto extends AlgoritmoGenetico {
     protected Cromosoma recombinar(Cromosoma cromosoma1, Cromosoma cromosoma2) {
         // COMPLETAR
         int punto = Cromosoma.gna.nextInt(cromosoma1.getLongitud());
-        Cromosoma recombinado = new Cromosoma(cromosoma1.getLongitud(), false);
-        for (int i = 0; i < cromosoma1.getLongitud(); i++) {
-            if (i <= punto) {
-                recombinado.setGen(i, cromosoma1.getGen(i));
-            } else {
+        Cromosoma recombinado = new Cromosoma(cromosoma1);
+        for (int i = punto; i < cromosoma1.getLongitud(); i++) {
                 recombinado.setGen(i, cromosoma2.getGen(i));
-            }
         }
         return recombinado;
     }

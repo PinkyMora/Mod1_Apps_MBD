@@ -82,7 +82,6 @@ public class Cromosoma {
      *             un valor válido.
      */
     public void setGen(int i, int val) {
-        //COMPLETAR
         if ((val != 0 && val != 1) || (i < 0 || i > datos.length)){
             throw new IllegalArgumentException("Argumentos no válidos para realizar la operacion");
         }
@@ -98,8 +97,11 @@ public class Cromosoma {
      *             si la probabilidad indicada no es un valor válido.
      */
     public void mutar(double probMutacion) {
-        for (int i=0;i< datos.length; i++){
-            if (gna.nextDouble(100)/100 < probMutacion ){
+        if (probMutacion < 0 || probMutacion > 1)
+            throw new IllegalArgumentException("Probabilidad de mutacion invalida");
+
+        for (int i=0; i< getLongitud(); i++){
+            if (gna.nextDouble() <= probMutacion ){
                 if(datos[i] == 0) {
                     datos[i] = 1;
                 }else

@@ -8,7 +8,6 @@ public class OneMax implements Problema {
      * @see Problema#evalua(Cromosoma)
      */
     public double evalua(Cromosoma cromosoma) {
-        // COMPLETAR
         return Arrays.stream(cromosoma.datos).filter(x -> x ==1).count();
 
     }

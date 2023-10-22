@@ -27,7 +27,6 @@ public class AGUniforme extends AlgoritmoGenetico {
      */
     @Override
     protected Cromosoma recombinar(Cromosoma cromosoma1, Cromosoma cromosoma2) {
-        // COMPLETAR
         Cromosoma recombinado = new Cromosoma(cromosoma1);
         for(int i = 0; i < recombinado.getLongitud(); i++) {
             if (Cromosoma.gna.nextBoolean()) {

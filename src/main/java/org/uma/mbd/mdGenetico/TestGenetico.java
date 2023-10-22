@@ -13,7 +13,7 @@ public class TestGenetico {
         static final double PROB_MUT = 0.02;
 
         public static void main(String[] args) {
-            Problema problema = new CeroMax();
+            Problema problema = new OneMax();
 
             AlgoritmoGenetico ga1 = new AGUnPunto(TAM_POBLACION, LONG_CROMOSOMA,
                     PASOS_GA, PROB_MUT, problema);

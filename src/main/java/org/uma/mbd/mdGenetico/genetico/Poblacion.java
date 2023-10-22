@@ -19,7 +19,6 @@ public class Poblacion {
      *             indicados no son válidos.
      */
     public Poblacion(int tamaño, int longitud, Problema problema) {
-        // COMPLETAR
 
         if (tamaño < 1)
             throw new IllegalArgumentException("Numero de individuos invalido para la creacion de una poblacion");
@@ -48,12 +47,7 @@ public class Poblacion {
         return Arrays.stream(individuos)
                 .reduce((ind1, ind2)-> ind1.getFitness() >= ind2.getFitness() ? ind1 : ind2)
                 .orElse(null );
-        //Arrays.stream(individuos).max((ind1, ind2)-> Double.compare(ind1.getFitness(), ind2.getFitness())).orElse(null)
     }
-
-/*    private Individuo peorIndividuo(){
-        return Arrays.stream(individuos).min((ind1, ind2)-> Double.compare(ind1.getFitness(), ind2.getFitness())).;
-    }*/
 
     /**
      * Devuelve el i-ésimo individuo de la población.
@@ -65,7 +59,6 @@ public class Poblacion {
      *             si el índice está fuera del rango de valores válidos.
      */
     public Individuo getIndividuo(int i) {
-        //COMPLETAR
         if (i < 0 || i >= getNumIndividuos())
             throw new ArrayIndexOutOfBoundsException("Posicion fuera del array de Inidividuos");
         return individuos[i];

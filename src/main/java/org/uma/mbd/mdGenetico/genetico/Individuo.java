@@ -29,7 +29,6 @@ public class Individuo {
      *            Problema fst resolver.
      */
     public Individuo(Cromosoma cromosoma, Problema problema) {
-        // COMPLETAR
         this.cromosoma = new Cromosoma(cromosoma);
         fitness = problema.evalua(this.cromosoma);
     }
