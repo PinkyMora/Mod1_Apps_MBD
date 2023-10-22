@@ -1,15 +1,10 @@
 
 package org.uma.mbd.mdGenetico;
-import org.uma.mbd.mdGenetico.genetico.AGUnPunto;
+import org.uma.mbd.mdGenetico.genetico.*;
 import org.uma.mbd.mdGenetico.genetico.AGUnPunto;
 import org.uma.mbd.mdGenetico.genetico.AGUniforme;
-import org.uma.mbd.mdGenetico.genetico.AGUniforme;
-import org.uma.mbd.mdGenetico.genetico.AlgoritmoGenetico;
-import org.uma.mbd.mdGenetico.genetico.Individuo;
-import org.uma.mbd.mdGenetico.genetico.OneMax;
-import org.uma.mbd.mdGenetico.genetico.Problema;
 
-    public class TestGenetico {
+public class TestGenetico {
 
         static final int TAM_POBLACION = 20;
         static final int PASOS_GA = 400;
@@ -18,7 +13,7 @@ import org.uma.mbd.mdGenetico.genetico.Problema;
         static final double PROB_MUT = 0.02;
 
         public static void main(String[] args) {
-            Problema problema = new OneMax();
+            Problema problema = new CeroMax();
 
             AlgoritmoGenetico ga1 = new AGUnPunto(TAM_POBLACION, LONG_CROMOSOMA,
                     PASOS_GA, PROB_MUT, problema);

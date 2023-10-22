@@ -64,8 +64,8 @@ public abstract class AlgoritmoGenetico {
                 a2 = Cromosoma.gna.nextInt(poblacion.getNumIndividuos());
             } while (a1 == a2);
             // Seguro que a1 es distinto de a2
-                Cromosoma c1 = poblacion.getIndividuo(a1).getCromosoma().copia();
-                Cromosoma c2 = poblacion.getIndividuo(a2).getCromosoma().copia();
+                Cromosoma c1 = new Cromosoma(poblacion.getIndividuo(a1).getCromosoma());
+                Cromosoma c2 = new Cromosoma(poblacion.getIndividuo(a2).getCromosoma());
 
                 Cromosoma recombMutado = recombinar(c1,c2);
                 recombMutado.mutar(probMutacion);

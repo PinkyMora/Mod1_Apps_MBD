@@ -30,7 +30,7 @@ public class Individuo {
      */
     public Individuo(Cromosoma cromosoma, Problema problema) {
         // COMPLETAR
-        this.cromosoma = cromosoma.copia();
+        this.cromosoma = new Cromosoma(cromosoma);
         fitness = problema.evalua(this.cromosoma);
     }
 
@@ -49,7 +49,7 @@ public class Individuo {
      * @return Cromosoma copia del asociado al individuo.
      */
     public Cromosoma getCromosoma() {
-        return cromosoma.copia();
+        return new Cromosoma(cromosoma);
     }
 
     public String toString() {

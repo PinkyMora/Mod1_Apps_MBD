@@ -52,14 +52,9 @@ public class Cromosoma {
     /**
      * Cobstructor de copia
      */
-    public Cromosoma copia() {
-        Cromosoma copia = new Cromosoma(datos.length, false); // Create a new Cromosoma with the same length
-
-        // Copy the values from the current Cromosoma to the new one
-        for (int i = 0; i < datos.length; i++) {
-            copia.setGen(i, datos[i]);
-        }
-        return copia;
+    public Cromosoma(Cromosoma cromosoma) {
+        datos = new int[cromosoma.getLongitud()];
+        System.arraycopy(cromosoma.datos, 0, datos, 0, cromosoma.getLongitud());
     }
     /**
      * Consulta el gen en la posición indicada.
