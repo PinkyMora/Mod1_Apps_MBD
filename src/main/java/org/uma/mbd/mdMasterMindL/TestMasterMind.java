@@ -1,10 +1,9 @@
 
-package org.uma.mbd.mdMastermindL;
+package org.uma.mbd.mdMasterMindL;
 
-import org.uma.mbd.mdMastermindL.mdMastermind.MasterMind;
-import org.uma.mbd.mdMastermindL.mdMastermind.MasterMindException;
-import org.uma.mbd.mdMastermindL.mdMastermind.MasterMindMemoria;
-import org.uma.mbd.mdMastermindL.mdMastermind.Movimiento;
+import org.uma.mbd.mdMasterMindL.masterMind.MasterMindException;
+import org.uma.mbd.mdMasterMindL.masterMind.MasterMindMemoria;
+import org.uma.mbd.mdMasterMindL.masterMind.Movimiento;
 
 import java.util.Scanner;
 
