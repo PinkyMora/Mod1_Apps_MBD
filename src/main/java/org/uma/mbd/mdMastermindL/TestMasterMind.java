@@ -1,4 +1,4 @@
-/*
+
 package org.uma.mbd.mdMastermindL;
 
 import org.uma.mbd.mdMastermindL.mdMastermind.MasterMind;
@@ -11,10 +11,10 @@ import java.util.Scanner;
 public class TestMasterMind {
 
     public static void main(String[] args) throws MasterMindException {
-        MasterMind juego = new MasterMind();
-//		MasterMindMemoria juego = new MasterMindMemoria();
+        //MasterMind juego = new MasterMind();
+		MasterMindMemoria juego = new MasterMindMemoria();
 
-//		System.out.println(juego.getSecreto());
+		System.out.println(juego.getSecreto());
         try (Scanner sc = new Scanner(System.in)) {
             boolean acertado = false;
             String cifras = null;
@@ -38,4 +38,4 @@ public class TestMasterMind {
         }
     }
 }
-*/
+
