@@ -62,8 +62,6 @@ public class Servicio {
         try(PrintWriter pw = new PrintWriter(file)){
             guarda(pw,criterio);
         }
-
-
     }
 
     public void guarda(PrintWriter pw, Criterio criterio){
@@ -74,7 +72,4 @@ public class Servicio {
             pw.println(bus);
         }
     }
-
-
-
 }

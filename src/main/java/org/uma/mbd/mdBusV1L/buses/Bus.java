@@ -10,7 +10,6 @@ public class Bus {
     public Bus(int codigoBus, String matric){
         codBus = codigoBus;
         matricula = matric;
-
     }
 
     public void setCodLinea(int codLinea) {
