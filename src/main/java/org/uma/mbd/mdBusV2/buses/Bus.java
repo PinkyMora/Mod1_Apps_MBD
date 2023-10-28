@@ -1,8 +1,9 @@
-package org.uma.mbd.mdBusV1L.buses;
+package org.uma.mbd.mdBusV2.buses;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Bus {
+public class Bus implements Comparable<Bus> {
     private int codBus;
     private String matricula;
     private int codLinea;
@@ -44,4 +45,14 @@ public class Bus {
         // Hacer con stringjoiner???
         return "Bus("+codBus+","+matricula+","+codLinea+")";
     }
+
+    @Override
+    public int compareTo(Bus b1) {
+        // Parece que salen al contrario
+        int result= matricula.compareToIgnoreCase(b1.matricula);
+        if (result == 0)
+            result = Integer.compare(codBus, b1.codBus);
+        return result;
+    }
+
 }

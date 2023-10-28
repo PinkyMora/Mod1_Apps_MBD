@@ -30,7 +30,7 @@ public class Mundo {
                     sc.useLocale(Locale.ENGLISH);
                     String nombre = sc.next();
                     String continente = sc.next();
-                    int altura = sc.nextInt();
+                    double altura = sc.nextDouble();
                     paisAdd = new Pais(nombre, continente,altura);
                     paises.add(paisAdd);
                 }catch (InputMismatchException e){
