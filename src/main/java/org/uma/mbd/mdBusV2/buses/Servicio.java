@@ -53,9 +53,9 @@ public class Servicio {
 
     public Set<Bus> filtra(Criterio criterio, Comparator<Bus> cb){
         return buses.stream()
-                .filter(bus -> criterio.esSeleccionable(bus))
+                .filter(criterio::esSeleccionable)
                 .sorted(cb)
-                .collect(Collectors.toCollection(LinkedHashSet::new));
+                .collect(Collectors.toCollection(TreeSet::new));
         // LinkedHashSet to have it sorted
     }
 

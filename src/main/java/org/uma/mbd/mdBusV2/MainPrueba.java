@@ -29,7 +29,7 @@ public class MainPrueba {
 
             emt.guarda(new PrintWriter(System.out, true),
                     new EnMatricula("A"),
-                    c1);
+                    cbon);
 
         } catch (IOException e) {
             System.err.println("Fichero no encontrado " + e.getMessage());
