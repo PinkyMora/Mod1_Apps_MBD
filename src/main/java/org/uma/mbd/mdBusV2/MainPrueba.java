@@ -14,7 +14,6 @@ public class MainPrueba {
             Servicio emt = new Servicio("Málaga");
             emt.leeBuses("recursos/mdBusV1/buses.txt");
 
-
             Comparator<Bus> cbon = Comparator.naturalOrder();
 
             Set<Bus> set = emt.filtra(new PorLinea(21), cbon);
