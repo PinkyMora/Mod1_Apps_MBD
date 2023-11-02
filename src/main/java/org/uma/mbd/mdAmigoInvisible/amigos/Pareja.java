@@ -6,8 +6,7 @@ public record Pareja(Persona uno, Persona otro) {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Pareja pareja && ((pareja.uno.equals(uno)  && (pareja.otro.equals(otro)))
-                                             | ((pareja.uno.equals(otro) && (pareja.otro.equals(uno)))));
+        return obj instanceof Pareja pareja && ((pareja.uno.equals(uno)  && (pareja.otro.equals(otro))) || ((pareja.uno.equals(otro) && (pareja.otro.equals(uno)))));
     }
 
     @Override

@@ -23,12 +23,34 @@ public class ClubParejas extends Club{
 
     @Override
     protected void hacerAmigos() {
-        super.hacerAmigos();
-        Set<Pareja> regalanA= new HashSet<>();
-        for (Persona persona : socios)
-        {
-            regalanA.add(new Pareja(persona,persona.getAmigo()));
+        List<Integer> posAmigos = new ArrayList<>(socios.size());
+        for (int idx = 0; idx < socios.size(); idx++) {
+            posAmigos.add(idx);
         }
 
+        while(hayCoincidencias(posAmigos) || hayParejas(posAmigos))
+            Collections.shuffle(posAmigos);
+
+        for (int i = 0; i< socios.size(); i++) {
+            socios.get(i).setAmigo(socios.get(posAmigos.get(i)));
         }
+    }
+
+    private static boolean hayCoincidencias(List<Integer> lista){
+
+        for(int j = 0; j< lista.size();j++){
+            if (lista.get(j) == j)
+                return true;
+        }
+        return false;
+    }
+
+    private boolean hayParejas(List<Integer> lista){
+        for(int i = 0; i< lista.size(); i++){
+            if(parejas.contains(new Pareja( socios.get(i), socios.get(lista.get(i))))){
+                return true;
+            }
+        }
+        return false;
+    }
 }

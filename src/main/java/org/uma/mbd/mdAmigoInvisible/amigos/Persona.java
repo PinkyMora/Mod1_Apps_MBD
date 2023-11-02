@@ -25,7 +25,7 @@ public class Persona implements Comparable<Persona>{
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Persona p && (nombre.toLowerCase() == p.getNombre().toLowerCase());
+        return obj instanceof Persona p && (nombre.toLowerCase().equals(p.getNombre().toLowerCase()));
     }
 
     @Override
