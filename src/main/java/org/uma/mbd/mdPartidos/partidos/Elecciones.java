@@ -2,6 +2,7 @@ package org.uma.mbd.mdPartidos.partidos;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -22,7 +23,7 @@ public class Elecciones {
         }catch(NoSuchElementException e){
             throw new EleccionesException("Error leyendo datos de la linea" + dato);
         }
-        // HACER CON STREAMS?? TAKEWHILE HASTA LA COMA???
+        // HACER CON STREAMS?? TAKEWHILE HASTA LA COMA??? SEEMS NOT NECESSARY
     }
 
     public void leeDatos(String [] datos){
@@ -41,6 +42,17 @@ public class Elecciones {
     }
 
     public void presentaResultados(String nombreFichero, Map<Partido,Integer> map) throws FileNotFoundException{
-        // print map entero, hacer pw??
+        try(PrintWriter fichero = new PrintWriter(nombreFichero)){
+            presentaResultados(fichero,map);
+        }
+    }
+
+    public void presentaResultados(PrintWriter pw, Map<Partido,Integer> map) throws FileNotFoundException{
+        // Partidos with representation
+        map.forEach((x,y)->pw.println(x + ", " + y));
+        // Partidos without representation
+        partidos.stream()
+                .filter(partido -> !map.containsKey(partido))
+                .forEach(partido -> pw.println(partido.getNombre()+", Sin representacion"));
     }
 }

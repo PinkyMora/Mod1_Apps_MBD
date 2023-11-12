@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class MainElecciones {
     // Elecciones de municipales 2011
-    String [] datosVotacion = {
+    static String [] datosVotacion = {
     "P.P.,123655",
     "P.S.O.E.,57245",
     "IULV-CA,25354",
@@ -36,10 +36,10 @@ public class MainElecciones {
             EleccionesManager eleccionesM = new EleccionesManager(new Elecciones());
             System.out.println("Con Dhont Simple");
             eleccionesM
-                    .setEntrada("recursos/mdPartidos/partidos.txt")
-//                    .setDatos(datosVotacion)
+                    //.setEntrada("recursos/mdPartidos/partidos.txt")
+                    .setDatos(datosVotacion)
                     .setCriterioSeleccion(new DHontSimple())
-                    .setSalida("recursos/mdPartidos/dhonts.txt")
+                    //.setSalida("recursos/mdPartidos/dhonts.txt")
                     .setConsola(true)
                     .setNumEsc(31)
                     .build();
